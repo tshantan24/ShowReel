@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<body>
+	<input type="checkbox" value="A1" checked="javascript:fun(this, 1)" />A1
+	<input type="checkbox" value="A2" checked="javascript:fun(this, 0)" />A2
+	<input type="checkbox" value="A3" checked="javascript:fun(this, 1)" />A3
+	<input type="checkbox" value="A4" checked="javascript:fun(this, 0)" />A4
+	<input type="checkbox" value="A5" checked="javascript:fun(this, 1)" />A5
+	<input type="checkbox" value="A6" checked="javascript:fun(this, 0)" />A6
+	<input type="checkbox" value="A7" checked="javascript:fun(this, 1)" />A7
+	<input type="checkbox" value="A8" checked="javascript:fun(this, 0)" />A8
+	<input type="checkbox" value="A9" checked="javascript:fun(this, 1)" />A9
+	<input type="checkbox" name="tag_1" id="tag_1" value="yes" <?php echo ($dbvalue['tag_1']==1 ? 'checked' : '');?>>
+
+</body>
+<script type="text/javascript">
+	function fun(arg) {
+		if(arg == 0){
+			this.className = "checked";
+			return "";
+		} else if(arg == 1){
+			this.className = "nchecked";
+			return "checked"
+		}
+	}
+
+	$('.checked').click(function(event) {
+		event.preventDefault();
+    event.stopPropagation();
+    
+    return false;
+	});
+</script>
+</html>
